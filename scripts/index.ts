@@ -3,7 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 import { SVGIcons2SVGFontStream } from "svgicons2svgfont";
 import svg2ttf from "svg2ttf";
-import { fileURLToPath } from "url";
+import { fileURLToPath } from "node:url";
 
 interface IconSvg {
   name: string;
@@ -82,15 +82,14 @@ async function main() {
 
   const svgFiles = await getAllSvgFiles(svgDir);
 
-  svgFiles.sort((a, b) =>
-    path.basename(a).localeCompare(path.basename(b)),
-  );
-
-  const icons: IconSvg[] = svgFiles.map((file, index) => ({
+  const icons: IconSvg[] = svgFiles.map((file, index) => {
+    console.log(START_CODEPOINT + index)
+   return {
     name: path.parse(file).name,
     path: file,
     codepoint: START_CODEPOINT + index,
-  }));
+  }
+  })
 
   console.log(`Found ${icons.length} icons`);
 
@@ -119,7 +118,7 @@ async function main() {
 
     dartFileTemplate += `
     // ${icon.name}
-    static const ${camelCase(icon.name)} = IonIcons._(IconData(${icon.codepoint}, fontFamily: 'IonIcons'));\n
+    static const ${camelCase(icon.name)} = IonIcons._(IconData(${icon.codepoint}, fontFamily: 'IonIcons',  fontPackage: 'easy_icons'));\n
     `
   }
 
