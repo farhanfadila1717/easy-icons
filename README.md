@@ -1,39 +1,70 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# easy_icons
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A lightweight Flutter icon package that exposes Ionicons as easy-to-use `IconData` constants.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Includes Ionicons font assets directly in the package.
+- Provides typed icon constants via `IonIcons`.
+- Works with Flutter `Icon` widgets.
+- No additional configuration required beyond adding the package dependency.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add `easy_icons` to your `pubspec.yaml` dependencies:
+
+```yaml
+dependencies:
+  easy_icons: ^0.0.1
+```
+
+Then run:
+
+```bash
+dart pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package and use `IonIcons` with Flutter's `Icon` widget:
 
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+import 'package:easy_icons/ionicons.dart';
+
+class ExampleIcon extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const Icon(
+      IonIcons.add,
+      size: 32,
+      color: Colors.blue,
+    );
+  }
+}
 ```
 
-## Additional information
+You can use any available icon constant, for example:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+- `IonIcons.add`
+- `IonIcons.addOutline`
+- `IonIcons.addSharp`
+- `IonIcons.alertCircle`
+- `IonIcons.airplane`
+
+## Supported Flutter / Dart versions
+
+- Dart SDK: `^3.12.0`
+- Flutter SDK: `>=1.17.0`
+
+## Notes
+
+The package includes the `IonIcons.ttf` font asset and maps each icon constant to the correct font family.
+
+## Repository
+
+https://github.com/farhanfadila1717/easy-icons
+
+## License
+
+See the `LICENSE` file for license details.
