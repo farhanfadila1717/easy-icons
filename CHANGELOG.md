@@ -1,7 +1,3 @@
-## 0.0.2
+## 0.0.3
 
 - Fix: export packages
-
-## 0.0.1
-
-- IonIcons
