@@ -1,1 +1,1 @@
-export './easy_icons.dart';
+export './ionicons.dart';
