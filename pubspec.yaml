@@ -1,7 +1,8 @@
 name: easy_icons
-description: "A new Flutter package project."
+description: "A Flutter package icons."
 version: 0.0.1
-homepage:
+repository: https://github.com/farhanfadila1717/easy-icons
+maintainer: Farhan Fadila (@farhanfadila1717)
 
 environment:
   sdk: ^3.12.0
