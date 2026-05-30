@@ -1,3 +1,3 @@
-## 0.0.3
+## 0.0.4
 
-- Fix: export packages
+- Fix: pass font package
