@@ -1,0 +1,16 @@
+---
+import IonIcons from "@/components/IonIcons.astro";
+import Navbar from "@/components/Navbar.astro";
+import { IonIconsList } from "@/core/models/ionicons";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <Navbar />
+
+  <div class="mt-6 container">
+    <div class="icon-grid">
+      {IonIconsList.map((item) => <IonIcons icon={item} />)}
+    </div>
+  </div>
+</Layout>

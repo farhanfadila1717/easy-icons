@@ -1,0 +1,13 @@
+---
+import { iconChar } from "@/core/utils";
+
+interface Props {
+  unicode: number;
+}
+
+const { unicode } = Astro.props;
+---
+
+<span class="tablericons">
+  {iconChar(unicode)}
+</span>

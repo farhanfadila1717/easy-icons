@@ -12,3 +12,12 @@
 .tablericons {
     font-family: 'TablerIcons';
 }
+
+.dot-grid {
+    background-image: radial-gradient(circle at 1px 1px, #bfbfbf 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+.icon-grid {
+   @apply container grid grid-cols-3 px-6 sm:px-0 sm:grid-cols-8 gap-4;
+}

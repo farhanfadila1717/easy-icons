@@ -1,28 +1,35 @@
 ---
-import TablerIcons from "@/components/TablerIcons.astro";
+import Navbar from "@/components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import { TablerIconsList } from "@/core/models/tablericons";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { iconChar } from "@/core/utils";
 ---
 
 <Layout>
-  <nav class="sticky top-0 h-16 bg-white border-b border-b-neutral-100 z-50">
-    <div class="container h-16 flex items-center">
-      <h1 class="font-bold">Easy Icons</h1>
-      <div></div>
+  <Navbar />
+  <div class="dot-grid">
+    <div
+      class="h-[calc(100vh-70px)] container flex flex-col items-center justify-center"
+    >
+      <h1 class="text-4xl font-bold">Easy use icon in Flutter</h1>
+
+      <p class="mt-6 py-3 px-6 rounded-2xl bg-neutral-100 border-neutral-200">
+        flutter pub add easy_icons
+      </p>
+
+      <div class="mt-6 flex gap-x-6">
+        <a href="./ionicons" class="flex gap-x-2 items-center">
+          <span class="ionicons">
+            {iconChar(60426)}
+          </span>
+          <p class="underline">IonIcons</p>
+        </a>
+        <a href="./tablericons" class="flex gap-x-2 items-center">
+          <span class="tablericons">
+            {iconChar(59832)}
+          </span>
+          <p class="underline">TablerIcons</p>
+        </a>
+      </div>
     </div>
-  </nav>
-  <div class="mt-6 container grid gap-4 grid-cols-3 sm:grid-cols-8">
-    {
-      TablerIconsList.map((item) => {
-        return (
-          <div>
-            <TablerIcons icon={item} />
-          </div>
-        );
-      })
-    }
   </div>
 </Layout>

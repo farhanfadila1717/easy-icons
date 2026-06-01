@@ -1,0 +1,15 @@
+---
+import Navbar from "@/components/Navbar.astro";
+import TablerIcons from "@/components/TablerIcons.astro";
+import { TablerIconsList } from "@/core/models/tablericons";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <Navbar />
+  <div class="mt-6 container">
+    <div class="icon-grid">
+      {TablerIconsList.map((item) => <TablerIcons icon={item} />)}
+    </div>
+  </div>
+</Layout>
