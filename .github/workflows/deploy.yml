@@ -25,6 +25,7 @@ jobs:
         with:
           # Points the builder to your documentation directory
           path: doc
+          node-version: 22
 
   deploy:
     needs: build
