@@ -9,6 +9,10 @@ A lightweight Flutter icon package that exposes Ionicons as easy-to-use `IconDat
 - Works with Flutter `Icon` widgets.
 - No additional configuration required beyond adding the package dependency.
 
+## Docs
+
+see https://farhan.is-a.dev/easy-icons/
+
 ## Installation
 
 Add `easy_icons` to your `pubspec.yaml` dependencies:
