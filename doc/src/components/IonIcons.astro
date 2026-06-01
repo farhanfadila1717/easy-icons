@@ -1,0 +1,19 @@
+---
+import { iconChar } from "@/core/utils";
+import type Icons from "@/core/models/icons";
+
+interface Props {
+  icon: Icons;
+}
+
+const { icon } = Astro.props;
+---
+
+<div
+  class="border border-neutral-100 bg-neutral-50 aspect-square flex flex-col items-center justify-center text-center rounded-2xl cursor-pointer"
+>
+  <span class="ionicons text-4xl">
+    {iconChar(icon.unicode)}
+  </span>
+  <p class="text-[10px]">{icon.iconName}</p>
+</div>

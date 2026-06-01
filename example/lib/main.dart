@@ -1,4 +1,4 @@
-import 'package:easy_icons/ionicons.dart';
+import 'package:easy_icons/easy_icons.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: .center,
           children: [
             const Text('You have pushed the button this many times:'),
-            Icon(IonIcons.accessibility.iconData),
+            Icon(IonIcons.accessibilityOutline.iconData),
           ],
         ),
       ),

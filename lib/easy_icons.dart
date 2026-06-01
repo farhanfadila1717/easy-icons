@@ -1,1 +1,2 @@
-export './ionicons.dart';
+export './generated/ionicons.dart';
+export './generated/tablericons.dart';

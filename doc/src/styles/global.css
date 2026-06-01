@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@font-face { font-family: 'IonIcons'; src: url('./fonts/IonIcons.ttf'); } 
+@font-face { font-family: 'TablerIcons'; src: url('./fonts/TablerIcons.ttf'); } 
+.container {
+    @apply max-w-5xl mx-auto
+}
+
+.ionicons {
+    font-family: 'IonIcons';
+}
+
+.tablericons {
+    font-family: 'TablerIcons';
+}

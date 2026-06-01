@@ -4,8 +4,8 @@ A lightweight Flutter icon package that exposes Ionicons as easy-to-use `IconDat
 
 ## Features
 
-- Includes Ionicons font assets directly in the package.
-- Provides typed icon constants via `IonIcons`.
+- Includes Ionicons, TablerIcons font assets directly in the package.
+- Provides typed icon constants via `IonIcons`, `TablerIcons`.
 - Works with Flutter `Icon` widgets.
 - No additional configuration required beyond adding the package dependency.
 
@@ -59,7 +59,7 @@ You can use any available icon constant, for example:
 
 ## Notes
 
-The package includes the `IonIcons.ttf` font asset and maps each icon constant to the correct font family.
+The package includes the `IonIcons.ttf`, `TablerIcons.ttf` font asset and maps each icon constant to the correct font family.
 
 ## Repository
 

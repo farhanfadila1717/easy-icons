@@ -22,3 +22,6 @@ flutter:
     - family: IonIcons
       fonts:
         - asset: fonts/IonIcons.ttf
+    - family: TablerIcons
+      fonts:
+        - asset: fonts/TablerIcons.ttf

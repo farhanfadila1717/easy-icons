@@ -1,0 +1,28 @@
+---
+import TablerIcons from "@/components/TablerIcons.astro";
+import Layout from "../layouts/Layout.astro";
+import { TablerIconsList } from "@/core/models/tablericons";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <nav class="sticky top-0 h-16 bg-white border-b border-b-neutral-100 z-50">
+    <div class="container h-16 flex items-center">
+      <h1 class="font-bold">Easy Icons</h1>
+      <div></div>
+    </div>
+  </nav>
+  <div class="mt-6 container grid gap-4 grid-cols-3 sm:grid-cols-8">
+    {
+      TablerIconsList.map((item) => {
+        return (
+          <div>
+            <TablerIcons icon={item} />
+          </div>
+        );
+      })
+    }
+  </div>
+</Layout>
