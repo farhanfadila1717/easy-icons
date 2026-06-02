@@ -1,0 +1,105 @@
+---
+import type Icons from "@/core/models/icons";
+import { camelCase, iconChar } from "@/core/utils";
+
+interface Props {
+  icon: Icons;
+}
+
+const { icon } = Astro.props;
+
+const code = `Icon(${icon.fontName}.${camelCase(icon.iconName)}.iconData)`;
+---
+
+<dialog id={`dialog-${icon.iconName}`} class="rounded-xl p-6 m-auto">
+  <div class="flex justify-between">
+    <h1 class="font-semibold">Easy Icons</h1>
+    <!-- Close Icon -->
+    <button
+      autofocus="false"
+      onclick="this.closest('dialog').close()"
+      class="size-8 rounded-full border border-neutral-400 flex items-center justify-center cursor-pointer"
+    >
+      <span class="remixicons text-2xl">
+        {iconChar(60265)}
+      </span>
+    </button>
+  </div>
+  <div class="mt-2 flex gap-x-3 items-center">
+    <div
+      class="w-15 h-15 flex items-center justify-center text-center border border-neutral-200 rounded-2xl"
+    >
+      <span class=`${icon.fontName.toLowerCase()} text-2xl`
+        >{iconChar(icon.unicode)}</span
+      >
+    </div>
+    <div class="flex flex-col">
+      <h2>{icon.iconName}</h2>
+      <p class="text-sm text-neutral-800">unicode: {icon.unicode}</p>
+    </div>
+  </div>
+  <div
+    class="mt-4 w-fit px-4 py-2 border border-neutral-200 rounded-xl flex items-center gap-x-2"
+  >
+    <span class="remixicons items-center text-blue-500">
+      {iconChar(60889)}</span
+    >
+    <p>Flutter</p>
+  </div>
+  <div
+    class="code-container mt-2 relative rounded-xl p-4 border border-neutral-200 max-w-80 sm:max-w-100 overflow-clip"
+  >
+    <code class="code-content text-sm whitespace-pre-wrap wrap-break-word pr-4"
+      >{code}</code
+    >
+
+    <button class="copy-btn absolute top-4 right-4">
+      <!-- Clipboard Icon -->
+      <span
+        class="clipboard-icon remixicons absolute inset-0 flex items-center justify-center text-xl transition-all duration-200"
+      >
+        {iconChar(60258)}
+      </span>
+
+      <!-- Check Icon -->
+      <span
+        class="checklist-icon remixicons absolute inset-0 flex items-center justify-center text-xl opacity-0 scale-50 transition-all duration-200"
+      >
+        {iconChar(60227)}
+      </span>
+    </button>
+  </div>
+</dialog>
+
+<script>
+  document.querySelectorAll(".code-container").forEach((container) => {
+    const button = container.querySelector(".copy-btn");
+    const code = container.querySelector(".code-content");
+    const clipboardIcon = button?.querySelector(".clipboard-icon");
+    const checklistIcon = button?.querySelector(".checklist-icon");
+
+    button?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(code?.textContent ?? "");
+
+        // Hide clipboard icon
+        clipboardIcon?.classList.add("opacity-0", "scale-50");
+
+        // Show check icon
+        checklistIcon?.classList.remove("opacity-0", "scale-50");
+        checklistIcon?.classList.add("opacity-100", "scale-100");
+
+        setTimeout(() => {
+          // Restore clipboard icon
+          clipboardIcon?.classList.remove("opacity-0", "scale-50");
+
+          // Hide check icon
+          checklistIcon?.classList.remove("opacity-100", "scale-100");
+          checklistIcon?.classList.add("opacity-0", "scale-50");
+        }, 1500);
+      } catch (err) {
+        console.error("Failed to copy:", err);
+      }
+    });
+  });
+</script>
