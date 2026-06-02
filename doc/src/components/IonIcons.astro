@@ -1,6 +1,7 @@
 ---
 import { iconChar } from "@/core/utils";
 import type Icons from "@/core/models/icons";
+import IconDialog from "./IconDialog.astro";
 
 interface Props {
   icon: Icons;
@@ -17,3 +18,5 @@ const { icon } = Astro.props;
   </span>
   <p class="text-[10px]">{icon.iconName}</p>
 </div>
+
+<IconDialog icon={icon} />
