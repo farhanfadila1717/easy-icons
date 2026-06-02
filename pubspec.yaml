@@ -1,6 +1,6 @@
 name: easy_icons
 description: "A Flutter package icons."
-version: 0.0.5
+version: 0.0.6
 repository: https://github.com/farhanfadila1717/easy-icons
 maintainer: Farhan Fadila (@farhanfadila1717)
 
@@ -22,6 +22,9 @@ flutter:
     - family: IonIcons
       fonts:
         - asset: fonts/IonIcons.ttf
+    - family: RemixIcons
+      fonts:
+        - asset: fonts/RemixIcons.ttf
     - family: TablerIcons
       fonts:
         - asset: fonts/TablerIcons.ttf

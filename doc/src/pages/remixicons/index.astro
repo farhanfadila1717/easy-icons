@@ -1,0 +1,16 @@
+---
+import Navbar from "@/components/Navbar.astro";
+import RemixIcons from "@/components/RemixIcons.astro";
+import TablerIcons from "@/components/TablerIcons.astro";
+import { RemixIconsList } from "@/core/models/remixicons";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <Navbar />
+  <div class="mt-6 container">
+    <div class="icon-grid">
+      {RemixIconsList.map((item) => <RemixIcons icon={item} />)}
+    </div>
+  </div>
+</Layout>

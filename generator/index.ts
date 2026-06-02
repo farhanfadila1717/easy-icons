@@ -27,6 +27,10 @@ const iconSvgFormatList: IconSvgFormat[] = [
     name: "TablerIcons",
     pathDirectory: "svg/tablericons/filled",
   },
+  {
+    name: "RemixIcons",
+    pathDirectory: "svg/remixicons",
+  },
 ];
 
 async function getAllSvgFiles(dir: string): Promise<string[]> {

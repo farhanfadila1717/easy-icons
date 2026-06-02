@@ -5,7 +5,7 @@ A lightweight Flutter icon package that exposes Ionicons as easy-to-use `IconDat
 ## Features
 
 - Includes Ionicons, TablerIcons font assets directly in the package.
-- Provides typed icon constants via `IonIcons`, `TablerIcons`.
+- Provides typed icon constants via `IonIcons`, `RemixIcons`, `TablerIcons`.
 - Works with Flutter `Icon` widgets.
 - No additional configuration required beyond adding the package dependency.
 
@@ -19,7 +19,7 @@ Add `easy_icons` to your `pubspec.yaml` dependencies:
 
 ```yaml
 dependencies:
-  easy_icons: ^0.0.1
+  easy_icons: lastest
 ```
 
 Then run:
@@ -30,17 +30,17 @@ dart pub get
 
 ## Usage
 
-Import the package and use `IonIcons` with Flutter's `Icon` widget:
+Import the package and use `easy_icons` with Flutter's `Icon` widget:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:easy_icons/ionicons.dart';
+import 'package:easy_icons/easy_icons.dart';
 
 class ExampleIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Icon(
-      IonIcons.add,
+      IonIcons.accessibility.iconData,
       size: 32,
       color: Colors.blue,
     );
@@ -63,7 +63,7 @@ You can use any available icon constant, for example:
 
 ## Notes
 
-The package includes the `IonIcons.ttf`, `TablerIcons.ttf` font asset and maps each icon constant to the correct font family.
+The package includes the `IonIcons.ttf`, `RemixIcons.ttf`, `TablerIcons.ttf` font asset and maps each icon constant to the correct font family.
 
 ## Repository
 
