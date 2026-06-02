@@ -11,6 +11,8 @@ const { icon } = Astro.props;
 ---
 
 <div
+  id="icon-card"
+  onclick={`document.getElementById('dialog-${icon.iconName}').showModal()`}
   class="border border-neutral-100 bg-neutral-50 aspect-square flex flex-col items-center justify-center text-center rounded-2xl cursor-pointer"
 >
   <span class="ionicons text-4xl">
